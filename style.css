@@ -1,0 +1,122 @@
+body {
+  height: 100vh;
+  background: linear-gradient(120deg, #0066cc, #99ccff);
+}
+.container {
+  border: 2px solid white;
+  padding: 35px;
+  width: 60%;
+  min-width: 700px;
+  padding-right: 15px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+#newtask {
+  width: 90%;
+  background-color: white;
+  padding: 20px 20px;
+  border-radius: 6px;
+  gap: 35px;
+  display: inline-flex;
+  position: relative;
+}
+#newtask input {
+  width: 65%;
+  font-size: 17px;
+  border: 2px solid;
+  padding: 12px;
+  position: relative;
+}
+#time {
+  width: 15%;
+  position: relative;
+  padding: 12px;
+}
+#newtask button {
+  position: relative;
+  float: right;
+  width: 17%;
+  height: 50px;
+  border-radius: 6px;
+  font-size: 17px;
+  cursor: pointer;
+}
+#tasks {
+  position: relative;
+  background-color: white;
+  padding: 20px 20px;
+  margin-left: 10px;
+  margin-top: 50px;
+  gap: 30px;
+  border-radius: 12px;
+  width: 90%;
+  min-width: 465px;
+}
+.timeoutput {
+  width: 30%;
+  position: relative;
+  height: 50px;
+  gap: 30px;
+  align-items: center;
+  display: inline-flex;
+  font-size: 15px;
+  margin-top: 10px;
+  padding-left: 10%;
+  display: flex;
+  padding: 5px 10px;
+}
+.task {
+  width: 38%;
+  height: 50px;
+  padding: 5px 10px;
+  margin-top: 10px;
+  gap: 30px;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+
+  cursor: pointer;
+}
+.task span {
+  font-size: 15px;
+  font-weight: 400;
+}
+.task button {
+  position: absolute;
+  background-color: red;
+  height: 40px;
+  width: 40px;
+  border-radius: 6px;
+  border: none;
+  
+  right: 30px;
+  cursor: pointer;
+}
+.task .check {
+  position: absolute;
+  background-color: green;
+  height: 40px;
+  width: 40px;
+  border-radius: 6px;
+  border: none;
+  right: 80px;
+}
+.task .edit {
+  position: absolute;
+  background-color: lightblue;
+  color: white;
+  height: 40px;
+  width: 40px;
+  border-radius: 6px;
+  border: none;
+  right: 130px;
+}
+[contenteditable]:focus {
+  outline: 0px solid transparent;
+}
+.done {
+  text-decoration: line-through;
+}

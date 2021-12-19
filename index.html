@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <div class="container">
+        <div id="newtask">
+            <input type="text" id="zaobrisat" placeholder="To do:">
+            <input type="date" id="time" name="date">   
+            <button id="push" >Dodaj</button> 
+                
+        </div>
+
+        <div id="tasks">
+            
+        </div>
+    </div>
+    
+
+
+    <script src="script.js"></script>  
+
+
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyDB5qoZgcZPNMr6awxfYGrLyHRW_zSDBE8",
+          authDomain: "todo-33776.firebaseapp.com",
+          projectId: "todo-33776",
+          storageBucket: "todo-33776.appspot.com",
+          messagingSenderId: "42088768409",
+          appId: "1:42088768409:web:fa6dba588e1f46395e6908"
+        };
+      
+        // Initialize Firebase
+       firebase.initializeApp(config);
+
+        (function () {
+        function writeData() {
+                firebase.database().ref("User").set({
+                    name: document.querySelector("#newtask input").value,
+                    age: document.querySelector("#time").value
+                });
+        }
+        document.getElementById('push').addEventListener('click', writeData, true);})();
+      </script>
+</body>
+</html>
