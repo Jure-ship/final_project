@@ -28,34 +28,43 @@
     <script src="script.js"></script>  
 
 
-<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+
+
+
     <script type="module">
         // Import the functions you need from the SDKs you need
-        
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
-      
-        // Your web app's Firebase configuration
-        const firebaseConfig = {
-          apiKey: "AIzaSyDB5qoZgcZPNMr6awxfYGrLyHRW_zSDBE8",
-          authDomain: "todo-33776.firebaseapp.com",
-          projectId: "todo-33776",
-          storageBucket: "todo-33776.appspot.com",
-          messagingSenderId: "42088768409",
-          appId: "1:42088768409:web:fa6dba588e1f46395e6908"
-        };
-      
-        // Initialize Firebase
-       firebase.initializeApp(config);
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+  import{getDatabase,ref,set,child,update,remove,push} from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
 
-        (function () {
-        function writeData() {
-                firebase.database().ref("User").set({
-                    name: document.querySelector("#newtask input").value,
-                    age: document.querySelector("#time").value
-                });
-        }
-        document.getElementById('push').addEventListener('click', writeData, true);})();
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyBadx9EmMuhsmFf4QggjrQ7K_i3Q6QUyqA",
+    authDomain: "projecttodo-330a7.firebaseapp.com",
+    projectId: "projecttodo-330a7",
+    storageBucket: "projecttodo-330a7.appspot.com",
+    messagingSenderId: "241320694956",
+    appId: "1:241320694956:web:3049ae0681dc60a0763b09"
+  };
+
+  const db=getDatabase();
+
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const button2 = document.querySelector("#push");
+
+function inputtask() {
+  push(ref(db,"Zadatci"),{
+      task:document.querySelector("#newtask input").value,
+      date:document.querySelector("#time").value
+  });
+}
+
+  button2.addEventListener("click", inputtask);
+
+        
       </script>
 </body>
 </html>
